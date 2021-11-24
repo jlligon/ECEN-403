@@ -19,6 +19,7 @@
 //#include "mbed.h"
 #include <stdio.h>
 #include <driver/i2c.h>
+#include "driver/gpio.h"
 
 /**
     Example:
@@ -135,7 +136,7 @@ public:
     * @brief   DEFAULT ADDRESS
     */
     typedef enum {
-        BH1790GLC_ADDRESS  =   ( 0b1011011 << 1U )   /*!<   ADDR                         */
+        BH1790GLC_ADDRESS  =   ( 0b1011011 << 1U )   /*!<  Device ADDR                   */
     } BH1790GLC_address_t;
 
 
@@ -322,7 +323,7 @@ public:
       * @param addr    I2C slave address
       * @param freq    I2C frequency
       */
-    BH1790GLC ( PinName sda, PinName scl, uint32_t addr, uint32_t freq );
+    BH1790GLC ( gpio_num_t sda, gpio_num_t scl, uint32_t addr, uint32_t freq );
 
     /** Delete BH1790GLC object.
      */

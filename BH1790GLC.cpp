@@ -15,9 +15,10 @@
  */
 
 #include "BH1790GLC.h"
+#include "driver/gpio.h"
 
 
-BH1790GLC::BH1790GLC ( int sda, int scl, uint32_t addr, uint32_t freq )
+BH1790GLC::BH1790GLC ( gpio_num_t sda, gpio_num_t scl, uint32_t addr, uint32_t freq )
     : _i2c             ( sda, scl )
     , _BH1790GLC_Addr  ( addr )
 {
