@@ -74,7 +74,7 @@ I2C::~I2C() {
 esp_err_t I2C::begin(gpio_num_t sda_io_num, gpio_num_t scl_io_num, uint32_t clk_speed) {
     return begin(sda_io_num, scl_io_num, GPIO_PULLUP_ENABLE, GPIO_PULLUP_ENABLE, clk_speed);
 }
-//input 5, 6, true, true, 400kHz i think
+//input 5, 6, true, true, 40kHz i think
 esp_err_t I2C::begin(gpio_num_t sda_io_num, gpio_num_t scl_io_num, gpio_pullup_t sda_pullup_en,
         gpio_pullup_t scl_pullup_en, uint32_t clk_speed) {
     i2c_config_t conf;
@@ -184,14 +184,22 @@ esp_err_t I2C::readByte(uint8_t devAddr, uint8_t regAddr, uint8_t *data, int32_t
 
 esp_err_t I2C::readBytes(uint8_t devAddr, uint8_t regAddr, size_t length, uint8_t *data, int32_t timeout) {
     i2c_cmd_handle_t cmd = i2c_cmd_link_create();
+    //printf("created link. cmd: %d\n", cmd);
     i2c_master_start(cmd);
+    //printf("started\n");
     i2c_master_write_byte(cmd, (devAddr << 1) | I2C_MASTER_WRITE, I2C_MASTER_ACK_EN);
+    //printf("wrote devAddr\n");
     i2c_master_write_byte(cmd, regAddr, I2C_MASTER_ACK_EN);
+    //printf("wrote regAddr\n");
     i2c_master_start(cmd);
+    //printf("started again\n");
     i2c_master_write_byte(cmd, (devAddr << 1) | I2C_MASTER_READ, I2C_MASTER_ACK_EN);
+    //printf("telling to read maybe?\n");
     i2c_master_read(cmd, data, length, I2C_MASTER_LAST_NACK);
+    //printf("masterRead - cmd: %d\n", cmd);
     i2c_master_stop(cmd);
     esp_err_t err = i2c_master_cmd_begin(port, cmd, (timeout < 0 ? ticksToWait : pdMS_TO_TICKS(timeout)));
+    //printf("err: %d", err);
     i2c_cmd_link_delete(cmd);
 #if defined CONFIG_I2CBUS_LOG_READWRITES
     if (!err) {
@@ -211,6 +219,7 @@ esp_err_t I2C::readBytes(uint8_t devAddr, uint8_t regAddr, size_t length, uint8_
             port, devAddr, length, regAddr, err);
     }
 #endif
+    printf("returning err: %d\n", err);
     return err;
 }
 

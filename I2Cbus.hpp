@@ -34,7 +34,7 @@ IN THE SOFTWARE.
  * I2Cbus
  * ^^^^^^ */
 namespace i2cbus {
-constexpr uint32_t kDefaultClockSpeed = 100000;  /*!< Clock speed in Hz, default: 100KHz */
+constexpr uint32_t kDefaultClockSpeed = 40000;  /*!< Clock speed in Hz, default: 100KHz */
 constexpr uint32_t kDefaultTimeout = 1000;       /*!< Timeout in milliseconds, default: 1000ms */
 class I2C;
 }  // namespace i2cbus
@@ -64,7 +64,7 @@ class I2C {
      * @param  scl_io_num    [GPIO number for SCL line]
      * @param  sda_pullup_en [Enable internal pullup on SDA line]
      * @param  scl_pullup_en [Enable internal pullup on SCL line]
-     * @param  clk_speed     [I2C clock frequency for master mode, (no higher than 1MHz for now), Default 100KHz]
+     * @param  clk_speed     [I2C clock frequency for master mode, (no higher than 1MHz for now), Default 40KHz]
      *                       @see "driver/i2c.h"
      * @return               - ESP_OK   Success
      *                       - ESP_ERR_INVALID_ARG Parameter error
