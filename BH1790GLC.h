@@ -2,6 +2,7 @@
  * @brief       BH1790GLC.h
  * @details     Optical Sensor for Heart Rate Monitor IC.
  *              Header file.
+ *              Edited by James Ligon for 403
  *
  *
  * @return      N/A
