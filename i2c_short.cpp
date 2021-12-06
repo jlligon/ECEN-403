@@ -2,6 +2,7 @@
 The MIT License (MIT)
 
 Copyright 2017 Natanael Josue Rabello. All rights reserved.
+Edited by James Ligon for use with ESP32C3
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to
