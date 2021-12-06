@@ -1,3 +1,6 @@
+//demo files for James Ligon ECEN 403 project
+//This code proved that the BNO080 is working
+
 #include <Wire.h>
 //#include <avr/wdt.h>
 
@@ -13,7 +16,7 @@ void setup() {
 
   myIMU.begin();
   Serial.println(F("after begin before setClock"));
-  Wire.setClock(40000); //Increase I2C data rate to 400kHz
+  Wire.setClock(40000); //Increase I2C data rate to 40kHz
 
   myIMU.enableGyro(100); //Send data update every 100ms
 
