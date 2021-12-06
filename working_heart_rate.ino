@@ -1,5 +1,6 @@
 /*****************************************************************************
   HeartRate.ino
+  edited by James Ligon for 403 Fitness Tracker
 
  Copyright (c) 2016 ROHM Co.,Ltd.
 
