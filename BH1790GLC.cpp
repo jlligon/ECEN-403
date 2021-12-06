@@ -1,7 +1,8 @@
 /**
  * @brief       BH1790GLC.cpp
  * @details     Optical Sensor for Heart Rate Monitor IC.
- *              Function file.
+ *              Function file for MBED OS
+ *              Edited by James Ligon for ESP32C3
  *
  *
  * @return      N/A
