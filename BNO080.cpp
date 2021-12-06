@@ -5,6 +5,7 @@
   https://www.sparkfun.com/products/14686
 
   Written by Nathan Seidle @ SparkFun Electronics, December 28th, 2017
+  Edited by James Ligon for ECEN 403
 
   The BNO080 IMU is a powerful triple axis gyro/accel/magnetometer coupled with an ARM processor
   to maintain and complete all the complex calculations for various VR, inertial, step counting,
