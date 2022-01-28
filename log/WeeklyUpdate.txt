@@ -1,2 +1,5 @@
 Sensors - completed schematic for accelerometer sensor. Heart Rate sensor is ongoing
         - retested both and confirmed working code for both sensors on Arduino
+Kennedy Jackson
+Power Subsystem - Ongoing integrated PCB design, updates, and verification to connect to MCU and supply power
+Bluetooth Connection - Developed code, ongoing improvements to simultaneously send all necessary data to mobile device and resolving a MCU crash issue
