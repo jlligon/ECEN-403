@@ -1,3 +1,4 @@
+James Ligon
 Sensors - completed schematic for accelerometer sensor. Heart Rate sensor is ongoing
         - retested both and confirmed working code for both sensors on Arduino
 Kennedy Jackson
